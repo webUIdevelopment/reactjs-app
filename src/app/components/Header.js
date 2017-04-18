@@ -1,21 +1,5 @@
 import React from "react";
 
-export class Header extends React.Component {
-  render() {
-    return(
-      <nav className="navbar navbar-default">
-        <div className="container">
-          <div className="navbar-header">
-            <ul className="nav navbar-nav">
-              <li><a href="#">{this.props.homeLink}</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    );
-  }
-}
-
 export class Table extends React.Component {
   constructor(props) {
     super(props);
@@ -48,6 +32,7 @@ export class TableRow extends React.Component {
     // this.setState({
     //   domainLink: event.target.innerHTML
     // });
+
     var domain = event.target.innerHTML.split('.')[0],newName;
     if(domain == "foodfighters") {
       newName = this.props.data.domainDetails.foodfighters;
@@ -61,6 +46,7 @@ export class TableRow extends React.Component {
     // console.log(this.props);
     // this.props.data.intitialDomainName = event.target.innerHTML;
   }
+
   render() {
     const {
       data
@@ -77,19 +63,3 @@ export class TableRow extends React.Component {
     );
   }
 }
-
-//state less Component
-
-// export const Header = (props) => {
-//   return(
-//     <nav className="navbar navbar-default">
-//       <div className="container">
-//         <div className="navbar-header">
-//           <ul className="nav navbar-nav">
-//             <li><a href="#">HOME</a></li>
-//           </ul>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
